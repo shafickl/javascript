@@ -1,0 +1,34 @@
+<script>
+// creating cookie
+setCookie("Car","Marcedes", 1);
+// deleting cookie
+deleteCookie('"1newEmail');
+// displaying cookies in console
+console.log(document.cookie);
+console.log(seeCookie("Car"));
+
+// function for creating a cookie
+function setCookie(name, value, daysToLive){
+const date = new Date();
+date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000);
+let expires = "expires=" + date.toUTCString();
+console.log(expires);
+document.cookie = name.concat("=").concat(value).concat("; ").concat(expires).concat("; path=/");
+}
+//function for deleting a cookie
+function deleteCookie(name){
+setCookie(name,null,null);
+}
+// function for retrieving a cookie via its name
+function seeCookie(name){
+const cDecoded = decodeURIComponent(document.cookie);
+const cArray = cDecoded.split("; ");
+let result = null;
+cArray.forEach(element => {
+if(element.indexOf(name) == 0){
+result = element.substring(name.length + 1)
+}
+})
+return result;
+}
+</script>

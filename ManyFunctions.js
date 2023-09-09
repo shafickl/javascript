@@ -100,6 +100,13 @@ cla[i].style.display = "none";
 }
 document.getElementById(elem).style.display = "block";
 }
+
+
+// FUNCTION TO DISPLAY NONE 
+function noneD(elememt){
+document.getElementById(element).style.display = "none";
+}
+	
 </script>
 
 
